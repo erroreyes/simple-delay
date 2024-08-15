@@ -79,7 +79,7 @@ jobs:
           runner_name=${{ matrix.name }}
           if [[ $runner_name = 'macos-universal' ]]; then
             # export MACOSX_DEPLOYMENT_TARGET=10.13
-            # rustup target add x86_64-apple-darwin
+            rustup target add x86_64-apple-darwin
             cargo xtask bundle-universal "${package_args[@]}" --release
           else
             cross_target=${{ matrix.cross-target }}
